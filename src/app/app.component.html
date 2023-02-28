@@ -1,0 +1,16 @@
+<div class="container" style="width:600px">
+  <div *ngIf="user | async as user">
+    <h3>Welcome, {{ user.displayName }}</h3>
+    <button (click)="logout()">Logout</button>
+    <div class="my-3">
+      <app-upload-form [userId]="user.uid"></app-upload-form>
+    </div>
+    <div class="my-2">
+      <app-upload-list [userId]="user.uid"></app-upload-list>
+    </div>
+  </div>
+  <div *ngIf="!(user | async)">
+    <app-login></app-login>
+  </div>
+</div>
+
