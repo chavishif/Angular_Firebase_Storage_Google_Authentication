@@ -9,10 +9,15 @@ import { map } from 'rxjs/operators';
 })
 export class UploadListComponent implements OnInit {
   fileUploads?: any[];
+  userImg = ""
+
   @Input() userId: string = localStorage.getItem('userId') || '';
 
 
-  constructor(private uploadService: FileUploadService) { }
+  constructor(private uploadService: FileUploadService) { 
+    this.userImg = this.uploadService.userImage
+  }
+ 
 
   ngOnInit(): void {
     this.uploadService.getFilesByUserId(this.userId, 6).snapshotChanges().pipe(

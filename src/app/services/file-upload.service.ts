@@ -11,6 +11,7 @@ import { FileUpload } from '../models/file-upload.model';
 })
 export class FileUploadService {
   private basePath = '/uploads';
+  userImage :string =""
 
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
 

@@ -30,6 +30,7 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
+  //providers - declare services and other dependencies
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
